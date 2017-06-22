@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" amp lang="es">
+<!--<![endif]-->
+<html amp lang="en">
+
+<head>
+    <title>calculadora</title>
+    <meta charset="UTF-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--para amp-->
+    <style amp-boilerplate>
+            body {
+                -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+                -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+                -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+                animation: -amp-start 8s steps(1, end) 0s 1 normal both
+            }
+            
+            @-webkit-keyframes -amp-start {
+                from {
+                    visibility: hidden
+                }
+                to {
+                    visibility: visible
+                }
+            }
+            
+            @-moz-keyframes -amp-start {
+                from {
+                    visibility: hidden
+                }
+                to {
+                    visibility: visible
+                }
+            }
+            
+            @-ms-keyframes -amp-start {
+                from {
+                    visibility: hidden
+                }
+                to {
+                    visibility: visible
+                }
+            }
+            
+            @-o-keyframes -amp-start {
+                from {
+                    visibility: hidden
+                }
+                to {
+                    visibility: visible
+                }
+            }
+            
+            @keyframes -amp-start {
+                from {
+                    visibility: hidden
+                }
+                to {
+                    visibility: visible
+                }
+            }
+     </style>
+     
+    <noscript>
+    <style amp-boilerplate>body{
+        -webkit-animation:none;
+        -moz-animation:none;
+        -ms-animation:none;
+        animation:none
+        }
+        </style>
+    </noscript>
+
+     <!--para facebook y whatsapp-->
+    <meta property="og:url"           content="https://github.io/raul-ram/calculadora" />
+    <meta property="og:type"          content="RamInfo" />
+    <meta property="og:title"         content="Calculadora Básica|RamInfo " />
+    <meta property="og:description"   content="Calculadora Básica con HTML, JavaScript y CSS" />
+    <meta property="og:image"         content="./images/icon.png" />
+    <meta property="og:image:type"    content="image/png">
+    <meta property="og:image:width"   content="200">
+    <meta property="og:image:height"  content="200">
+    
+   <!--script contador de visitas-->
+    <script type="text/javascript" src="https://counter1.fcs.ovh/private/counter.js?c=uubhy3r2p5598bjmr1yj789lwlta6z81"></script>
+
+    <script src="./js/procesos.js"></script>
+    <script src="./js/fecha.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/calculadora.css">
+    <link rel="shortcut icon" type="text/css" href="images/icon.png">
+    <link rel="stylesheet" href="./fonts/style.css">
+
+
+
+</head>
+
+<body>
+    <header>
+        <div id="logo"> 
+            <img src="./images/raminfo.png" alt="">
+        </div>
+       <div>
+            <div id="fecha-hora">
+                Fecha:<em id="fecha"></em> <br>
+               Hora Actual <em id="reloj"></em>
+            </div>
+            <img src="https://counter1.fcs.ovh/private/contadorvisitasgratis.php?c=uubhy3r2p5598bjmr1yj789lwlta6z81" border="0"  alt="contador de visitas raminfo">
+
+       </div>
+    </header>
+    <section>
+        <h1>Cómo hacer una calculadora básica con HTMl, JavaScript y CSS</h1>
+        <hr>
+        <div class="intro">
+            <p>Os explicaré como crear un calculadora básica (suma, resta, división y multiplicacion) con <spam>HTML</spam>,
+                <spam>JavaScript</spam> y <spam>CSS</spam>
+            </p>
+            <p>No será una gran cosa, porsupuesto que se puede hacer de diferentes formas, pero 
+                apartir de esto podrás crearte la tuya más bonita, con más funciones y ya con operaciones básicas 
+            </p>
+        </div>
+        
+        <hr>
+        <!--explicando como va ser la estructura en html-->
+        <div class="contenedor">
+            <h2>Estructura en HTML</h2>
+            <hr>
+            <p>En este caso voy a usar</p>
+            <ul>
+                <li>
+                    Tres areas de entrada de texto: etiqueta <spam>input</spam>,
+                    Dos para ingresar números y una para mostrar el resultado el cual será solo de lectura.
+                </li>
+                <li>
+                    Cinco botones: etiqueta <spam>button</spam>, 
+                    Cuatro para hacer las operaciones pero cada una de ellas con diferente contenido <spam>+, -, * y /</spam> 
+                    y una para borrar (vaciar las entradas de texto y el resultado).
+                    Para más comodidad lo encapsulamos en un contenedor: etiqueta <spam>div</spam>.
+                </li>
+                <li>
+                    Las rayas horizontales no mas que una raya con la etiqueta <spam>hr</spam>
+                </li>
+            </ul>
+            <h3>Los botones</h3>
+            <p>Vamos a usar el evento <spam>onclick</spam> mediante el cual cuando 
+                se clickee llame a la función <spam>operar('signo')</spam> mandando
+                un signo por argumentos.
+            </p>
+            <div id="cod-html">
+                <img src="./images/cod-htlm.png"  alt="estructura de calculadora">
+            </div>
+        </div>
+    
+        <!--explicando como va ser en JavaScript-->
+        <div class="contenedor">
+            <h2>Explicación  del Script</h2>
+            <hr>
+            <ul>
+                <h4>Función Operar</h4>
+                <li>
+                    <p><spam>function operar(signo) { </spam> >>Se crea una función con el nombre <spam>operar</spam> y recibe por argumentos en una veriable <spam>signo</spam></p>
+                </li>
+                <li>
+                    <p><spam>var num1=document.getElementById ("campo1").value;</spam> <br>
+                        <spam>num1 = parseInt(num1);</spam>>>
+                        <spam>var num1</spam> creamos una variable, llamamos al campo1 por su identificación con 
+                        <spam>document.getElementById</spam> y capturamos lo que sea introducido con <spam>.value</spam>
+                        y lo que se obtiene se convierte a numero entero con <spam>parseInt</spam>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <spam>var num2=parseInt( document.getElementById ("campo2").value);</spam> >>Idem al anterior pero para el campo2
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <spam>var resultado;</spam> >>creamos una variable para guardar resultado de un proceso (operación)
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <spam> if (signo == '+') {</spam> >> condición, preguntamos si el boton precionado fue el de sumar.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <spam>resultado = num1 + num2;</spam> >> Guardamos en la variable resultado la suma de numero1 y numero2.
+                    </p>
+                </li>
+                <li>
+                    <p><spam>Así lo mismo para las demás operaciones.</spam></p>
+                </li>
+                <li>
+                    <p>
+                        <spam>document.getElementById ("resultado").value = resultado;</spam> >>En esta línea decimos que cambie el valor 
+                        del campo de resultado aignando el valor de <spam>resultado</spam>.
+                    </p>
+                </li>
+
+                <h4>Función borrar</h4>
+                <li>
+                    <p>
+                        <spam>function borrar(){</spam> >>Creamos una función con el nombre <spam>borrar</spam>
+                        y dentro de ella llamando por su <spam>id</spam>.
+                    </p>
+                </li>
+                <li>
+                    <p><spam>document.getElementById ('campo1').value = "";</spam> <br>
+                        modificamos su valor (lo asignamos vacio) a los tres campos.
+                    </p>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+   
+    <!--estructuta para la calculadora-->
+    <section>
+        <h2>Aquí les dejo el demo</h2>
+        <hr>
+        <div class="content">
+            <fieldset>
+                <legend>
+                    <h2>Calculadora Básica</h2>
+                </legend>
+                <hr>
+                Número 1: <input class="dimensiones" type="number" id="campo1"> <br>
+                Número 2: <input class="dimensiones" type="number" id="campo2"> <br>
+                <hr>
+                <div class="botones">
+                    <button onclick="operar('+')">+</button>
+                    <button onclick="operar('-')">-</button>
+                    <button onclick="operar('*')">*</button>
+                    <button onclick="operar('/');">/</button> 
+                    <button onclick="borrar()" id="btn_borrar">CE</button><br>
+                </div>
+                <hr>
+                Resultado:<input class="dimensiones" type="text" id="resultado" readonly> <br> <br>
+            </fieldset>
+        </div>
+    </section>  
+
+     <!--contactos y redes sociales-->
+    <section>
+        <h3>Contáctame</h3>
+        <hr>
+        <div class="caja-redes flex">
+            <a href="https://raul.ayllon.manrrique@gmail.com" class="icon-mail"></a>
+            <a href="https://www.linkedin.com/in/raulayllon/" class="icon-linkedin"></a>
+            <a href="https://github.com/raul-ram" class="icon-github"></a>
+            <a href="https://www.facebook.com/raul ayllon manrrique" class="icon-facebook"></a>
+        </div>
+       <div id="compartir-whatsapp">
+            <h3>Compartir esta página por whatsapp</h3>
+        <hr>
+        <a href="whatsapp://send?text=https://github.com/raul-ram/" data-action="share/whatsapp/share" class="icon-share">  </a>
+       </div>
+        <p>Si quieres el codigo completo contáctame</p>
+    </section>
+</body>
+
+</html>

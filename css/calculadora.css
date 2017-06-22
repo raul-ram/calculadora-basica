@@ -1,0 +1,156 @@
+/*primary #FCF4D9
+second #8ED2C9
+tercero #00AAA0
+cuarto #D55B3E*/
+
+body{
+    background-color: #FCF4D9;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+}   
+
+header{
+    width: 100%;
+    position: center;
+    background-color: #D55B3E;
+}
+#logo{
+    padding: 20px;
+    background-color:#00AAA0; 
+}
+#logo img{
+    width: 300px;
+}
+
+#fecha-hora{
+    margin-left: 20px;
+}
+#fecha-hora em{
+    color: white;
+}
+/*estilo para mi contenido*/
+#cod-html{
+    padding: 2px;
+    background-color: #00AAA0;
+    text-align: center;
+     border-radius: 10px 10px 10px 10px;
+}
+#cod-html img{
+     width: 780px;
+     border-radius: 10px 10px 10px 10px;
+     margin-top: 5px;
+}
+
+spam{
+    color: dodgerblue;
+}
+
+a{
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+    color: #D55B3E;
+}
+.caja-redes a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    color: white;
+    font-size: 30px;
+}
+section{
+    margin-top:10px;    
+    width: 800px;
+    background-color: #8ED2C9;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    margin-left: 200px;
+}
+
+.flex{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+/*ocultar compartir whatsapp*/
+#compartir-whatsapp{
+    display: none;
+}
+/*vista para celulares*/
+ @media all and (max-width: 640px){
+     body{
+         margin-left: 20px;
+     }
+     #logo img{
+        width: 250px;
+    }
+     #cod-html img{
+         width: 300px;
+         margin: 0;
+    }
+     .caja-redes{
+         justify-content: center;
+         padding: 10px;
+         align-items: center;
+     }
+     #compartir-whatsapp{
+       display:block;
+       text-align: center;
+       color: white;
+       font-size: 30px;
+    }
+     section{
+         width: 310px;
+         margin-right: 10px;
+         margin-left: 10px;
+     }
+    
+ }
+
+
+
+
+
+
+
+/*estilo para la caluladora*/
+.content{
+    width: 310px;
+	background:#333;
+	color: #EEE;
+	font-family: Arial;
+	font-size: 16px;
+	text-align: center;
+    margin-bottom: 50px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.dimensiones{
+    color: white;
+    background-color: #777;
+    border: 1px solid #a9a9a9;
+    width: 200px;
+    margin-bottom: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}   
+
+.botones button{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #777;
+    box-shadow: 2px 2px 2px #333;
+}
+fieldset{
+    margin-bottom: 10px;
+}
+#btn_borrar{
+    background-color: red;
+}
+
+
+
