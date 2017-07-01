@@ -20,7 +20,7 @@ function iniciarHora() {
 
     m = checkTime(m);
     s = checkTime(s);
-
+    
     document.getElementById('fecha').innerHTML =dia[f.getDay()]+" "+f.getDate()+"/"+f.getMonth()+"/"+f.getFullYear();
     document.getElementById('reloj').innerHTML = h +":"+ m + ":" + s;
 
